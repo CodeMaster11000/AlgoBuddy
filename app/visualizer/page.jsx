@@ -564,7 +564,7 @@ const sections = [
   },
   {
     title: "Graph",
-    desc: "BFS, DFS, Dijkstra, MST & topological sort",
+    desc: "BFS, DFS, shortest paths, MST & topological sort",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -619,6 +619,10 @@ const sections = [
           {
             name: "Dijkstra's Algorithm",
             path: "/visualizer/graph/dijkstra",
+          },
+          {
+            name: "Floyd-Warshall Algorithm",
+            path: "/visualizer/graph/floyd-warshall",
           },
           {
             name: "Prim's Algorithm",
