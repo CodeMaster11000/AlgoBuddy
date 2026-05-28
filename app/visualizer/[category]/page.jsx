@@ -14,7 +14,8 @@ export async function generateStaticParams() {
 
 // Dynamic metadata per category
 export async function generateMetadata({ params }) {
-  const section = sections.find((s) => s.slug === params.category);
+  const resolvedParams = await params;
+  const section = sections.find((s) => s.slug === resolvedParams.category);
   if (!section) return {};
 
   return {
@@ -25,8 +26,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function CategoryPage({ params }) {
-  const section = sections.find((s) => s.slug === params.category);
+export default async function CategoryPage({ params }) {
+  const resolvedParams = await params;
+  const section = sections.find((s) => s.slug === resolvedParams.category);
 
   // Return 404 for unknown category slugs
   if (!section) notFound();
