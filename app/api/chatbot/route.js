@@ -139,9 +139,9 @@ export async function POST(req) {
       );
     }
 
-    // Send request to Google Gemini API using the Gemini 1.5 Flash model
+    // Send request to Google Gemini API using the Gemini 2.5 Flash model
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?alt=sse&key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?alt=sse&key=${process.env.GEMINI_API_KEY}`,
       {
         method: "POST",
         headers: {
